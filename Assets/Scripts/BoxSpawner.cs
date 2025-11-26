@@ -13,6 +13,7 @@ public class BoxSpawner : MonoBehaviour
 
     void SpawnBox()
     {
+        if (!GameManager.Instance.GameStarted) return;
         if (GameManager.gameOver) return;
         Vector3 pos = new Vector3(Random.Range(-range, range), transform.position.y, 0);
         Instantiate(boxPrefab, pos, Quaternion.identity);

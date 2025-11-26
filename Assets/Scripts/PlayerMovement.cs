@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
+        if (!GameManager.Instance.GameStarted) return;
         if (GameManager.gameOver) return;
 
         float x = Input.GetAxis("Horizontal");
