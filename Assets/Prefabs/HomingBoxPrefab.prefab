@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4999067321145537664}
   - component: {fileID: 2126461467320258526}
   - component: {fileID: 6170086726308692225}
-  - component: {fileID: 6930788317850439934}
+  - component: {fileID: 6859932152320580650}
   m_Layer: 0
-  m_Name: FallingBoxPrefab
+  m_Name: HomingBoxPrefab
   m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,12 +83,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8891853322587296983, guid: 869ece1ab440349158a6442d94173882, type: 3}
+  m_Sprite: {fileID: -4588761144088606319, guid: bb1857ac094f44036bd9368a5faf3546, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 9.79, y: 6.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -159,8 +159,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.26, y: 9.76}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 9.79, y: 6.08}
+    newSize: {x: 9.79, y: 6.08}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52c5a6cfcf254d12a0c15cdf48fd294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyOnCollision
---- !u!114 &6930788317850439934
+--- !u!114 &6859932152320580650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5495742932715308301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ff75b5a285a43a9958b1235df4bcf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b24ddf38c9f046d28827c46b156195f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BoxMovement
-  baseSpeed: 2
+  m_EditorClassIdentifier: Assembly-CSharp::HomingBox
+  moveSpeed: 3

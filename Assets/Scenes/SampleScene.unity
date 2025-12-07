@@ -984,7 +984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   startScreenUI: {fileID: 1853804044}
   message: {fileID: 1306114375}
-  timeToWin: 10
+  timeToWin: 30
 --- !u!4 &307043608
 Transform:
   m_ObjectHideFlags: 0
@@ -1771,7 +1771,7 @@ GameObject:
   - component: {fileID: 689384493}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4858,6 +4858,8 @@ MonoBehaviour:
   boxPrefab: {fileID: 5495742932715308301, guid: 63b44b42ca4b2444d9fb1dad545a09b1, type: 3}
   spawnInterval: 1.5
   range: 7
+  homingBoxPrefab: {fileID: 5495742932715308301, guid: 299a8a978507f4c08aebc779c478093e, type: 3}
+  homingChance: 0.25
 --- !u!1 &1962241990
 GameObject:
   m_ObjectHideFlags: 0

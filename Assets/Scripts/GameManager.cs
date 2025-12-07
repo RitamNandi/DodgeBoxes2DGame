@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,8 +19,18 @@ public class GameManager : MonoBehaviour
     }
     public TextMeshProUGUI message;
     private float initialWinTime;
-    public float timeToWin = 10f;
+    public float timeToWin = 30f;
     public static bool gameOver = false;
+    public int score = 0;
+    public TextMeshProUGUI scoreUI;
+    public void AddScore(int amount)
+    {
+        score += amount;
+        if (scoreUI != null)
+        {
+            scoreUI.text = "Score: " + score.ToString();
+        }
+    }
     private void Start()
     {
         initialWinTime = timeToWin;
@@ -96,5 +105,9 @@ public class GameManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
             player.transform.position = new Vector3(0, -3, 0);
+    }
+    public float GetElapsedTime()
+    {
+        return initialWinTime - timeToWin;
     }
 }
