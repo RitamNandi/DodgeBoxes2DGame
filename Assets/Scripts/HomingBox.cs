@@ -33,7 +33,7 @@ public class HomingBox : MonoBehaviour
         ).normalized;
 
         // Increase speed as time goes on
-        float currentSpeed = initialMoveSpeed + (Time.timeSinceLevelLoad * speedRamp);
+        float currentSpeed = initialMoveSpeed + (GameManager.Instance.GetElapsedTime() * speedRamp);
 
         // Only move if not extremely close to player
         if (Vector2.Distance(rb.position, player.position) > minDistance)
