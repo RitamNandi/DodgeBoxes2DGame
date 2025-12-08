@@ -16,7 +16,7 @@ public class CoinSpawner : MonoBehaviour
     {
         if (!GameManager.Instance.GameStarted || GameManager.gameOver) return;
 
-        float offset = 3f;
+        float offset = 2f;
         float spawnX = player.position.x + Random.Range(-offset, offset);
         spawnX = Mathf.Clamp(spawnX, -range, range); // Keep within horizontal bounds
 

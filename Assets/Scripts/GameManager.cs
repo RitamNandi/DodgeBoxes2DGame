@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
-        message.text = "You win!\nPress R to Restart";
+        message.text = "You survived!\nPress R to Restart\n Score: " + score.ToString();
         gameOver = true;
     }
 

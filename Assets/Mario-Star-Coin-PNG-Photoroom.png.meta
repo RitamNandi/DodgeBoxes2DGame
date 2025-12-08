@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b49827b5091af45ddaef02513d11f9e0
+guid: d10852374ecd34486b1c0d9f22ab3a00
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7675826601332790545
-    second: coin_0
+      213: 4287998943956224047
+    second: Mario-Star-Coin-PNG-Photoroom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coin_0
+      name: Mario-Star-Coin-PNG-Photoroom_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 900
-        height: 618
+        x: 203
+        y: 49
+        width: 445
+        height: 433
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1155fe920a3068a60800000000000000
-      internalID: 7675826601332790545
+      spriteID: f28c2cb1258028b30800000000000000
+      internalID: 4287998943956224047
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      coin_0: 7675826601332790545
+      Mario-Star-Coin-PNG-Photoroom_0: 4287998943956224047
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
