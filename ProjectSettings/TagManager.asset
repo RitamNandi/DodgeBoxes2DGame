@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Box
   - Ground
+  - PowerUp
   layers:
   - Default
   - TransparentFX
