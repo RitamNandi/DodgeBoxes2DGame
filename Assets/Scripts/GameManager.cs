@@ -22,7 +22,9 @@ public class GameManager : MonoBehaviour
     public float timeToWin = 30f;
     public static bool gameOver = false;
     public int score = 0;
+    public int highScore = 0;
     public TextMeshProUGUI scoreUI;
+    public TextMeshProUGUI highScoreUI;
     public void AddScore(int amount)
     {
         score += amount;
@@ -31,9 +33,16 @@ public class GameManager : MonoBehaviour
             scoreUI.text = "Score: " + score.ToString();
         }
     }
+    private void UpdateHighScoreUI()
+    {
+        if (highScoreUI != null)
+            highScoreUI.text = "High Score: " + highScore.ToString();
+    }
     private void Start()
     {
         initialWinTime = timeToWin;
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
+        UpdateHighScoreUI();
         Time.timeScale = 0f;
         GameStarted = false;
 
@@ -76,14 +85,25 @@ public class GameManager : MonoBehaviour
 
     public void Win()
     {
+        checkHighScore();
         message.text = "You survived!\nPress R to Restart\n Score: " + score.ToString();
         gameOver = true;
     }
 
     public void Lose()
     {
+        checkHighScore();
         message.text = "You lost!\nPress R to Restart\nScore: " + score.ToString();
         gameOver = true;
+    }
+    void checkHighScore()
+    {
+        if (score > highScore)
+        {
+            highScore = score;
+            PlayerPrefs.SetInt("HighScore", highScore);
+            UpdateHighScoreUI();
+        }
     }
     public void ResetGame()
     {
