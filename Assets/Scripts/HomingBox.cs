@@ -3,7 +3,7 @@ using UnityEngine;
 public class HomingBox : MonoBehaviour
 {
     public float initialMoveSpeed = 3f;
-    public float speedRamp = 0.5f;
+    public float speedRamp = 0.2f;
     public float turnSpeed = 5f;
     public float minDistance = 0.5f;
 

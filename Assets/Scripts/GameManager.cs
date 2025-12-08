@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
 
     public void Lose()
     {
-        message.text = "You lost!\nPress R to Restart";
+        message.text = "You lost!\nPress R to Restart\nScore: " + score.ToString();
         gameOver = true;
     }
     public void ResetGame()
@@ -90,6 +90,11 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         GameStarted = false;
         timeToWin = initialWinTime;
+        score = 0;
+        if (scoreUI != null)
+        {
+            scoreUI.text = "Score: " + score.ToString();
+        }
 
         message.text = "";
         startScreenUI.SetActive(true);
