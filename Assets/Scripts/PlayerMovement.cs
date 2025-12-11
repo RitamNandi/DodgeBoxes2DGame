@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     private float originalSpeed;
     private bool boosted = false;    
+    private bool shielded = false;
     void Start()
     {
         originalSpeed = speed;   
@@ -31,5 +32,20 @@ public class PlayerMovement : MonoBehaviour
 
         boosted = false;
         speed = originalSpeed;
+    }
+    public IEnumerator ShieldBoost(float duration)
+    {
+        if (!shielded)
+        {
+            shielded = true;
+            GameManager.hasShield = true;
+            GameManager.Instance.shieldUI.text = "You have been shielded for 3 seconds!";
+        }
+
+        yield return new WaitForSeconds(duration);
+
+        GameManager.Instance.shieldUI.text = "";
+        shielded = false;
+        GameManager.hasShield = false;
     }
 }

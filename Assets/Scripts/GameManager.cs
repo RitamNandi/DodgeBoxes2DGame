@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public int highScore = 0;
     public TextMeshProUGUI scoreUI;
     public TextMeshProUGUI highScoreUI;
+    public TextMeshProUGUI shieldUI;
+    public static bool hasShield;
     public void AddScore(int amount)
     {
         score += amount;
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        hasShield = false;
         initialWinTime = timeToWin;
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         UpdateHighScoreUI();
@@ -111,6 +114,8 @@ public class GameManager : MonoBehaviour
         GameStarted = false;
         timeToWin = initialWinTime;
         score = 0;
+        hasShield = false;
+        shieldUI.text = "";
         if (scoreUI != null)
         {
             scoreUI.text = "Score: " + score.ToString();
