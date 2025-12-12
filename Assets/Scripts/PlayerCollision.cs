@@ -8,7 +8,7 @@ public class PlayerCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Box") && !GameManager.hasShield) // only let the player lose on collision if no shield
+        if (!GameManager.gameOver && col.gameObject.CompareTag("Box") && !GameManager.hasShield) // only let the player lose on collision if no shield
         {
             gm.Lose();
         }
