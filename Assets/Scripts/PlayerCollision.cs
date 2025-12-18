@@ -8,9 +8,17 @@ public class PlayerCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (!GameManager.gameOver && col.gameObject.CompareTag("Box") && !GameManager.hasShield) // only let the player lose on collision if no shield
+        if (!GameManager.gameOver && col.gameObject.CompareTag("Box")) // camera can shake even if shielded
         {
-            gm.Lose();
+            CameraShake camShake = Camera.main.GetComponent<CameraShake>();
+            if (camShake != null)
+            {
+                StartCoroutine(camShake.Shake(0.2f, 0.15f));
+            }
+            if (!GameManager.hasShield) // only lose if not shielded
+            {
+                gm.Lose();
+            }
         }
     }
 }
