@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI highScoreUI;
     public TextMeshProUGUI shieldUI;
     public static bool hasShield;
+    public int maxCoins = 10;
+    public static bool usedPowerUp = false;
     public void AddScore(int amount)
     {
         score += amount;
@@ -90,6 +92,14 @@ public class GameManager : MonoBehaviour
     {
         checkHighScore();
         message.text = "You survived!\nPress R to Restart\n Score: " + score.ToString();
+        if (score == maxCoins) // I set up the maxCoins constant so that if it changes, this isn't just hardcoded
+        {
+            message.text += "\n You collected all of the possible coins!";
+        }
+        if (!usedPowerUp)
+        {
+            message.text += "\n Achievement Unlocked: Survivor - You completed the game without using any power-ups!";
+        }
         gameOver = true;
     }
 

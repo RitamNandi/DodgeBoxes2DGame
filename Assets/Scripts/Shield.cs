@@ -11,6 +11,8 @@ public class Shield : MonoBehaviour
             {
                 player.StartCoroutine(player.ShieldBoost(shieldDuration));
             }
+            GameManager.usedPowerUp = true;
+            Debug.Log("Power up has been marked as used, ineligible for achievement now");
             Destroy(gameObject);
         }
     }

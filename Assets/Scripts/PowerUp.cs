@@ -15,6 +15,8 @@ public class PowerUp : MonoBehaviour
             }
 
             Destroy(gameObject);
+            GameManager.usedPowerUp = true;
+            Debug.Log("Power up has been marked as used, ineligible for achievement now");
         }
     }
 }
