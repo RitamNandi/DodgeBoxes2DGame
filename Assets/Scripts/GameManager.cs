@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         message.text = "You survived!\nPress R to Restart\n Score: " + score.ToString();
         if (score == maxCoins) // I set up the maxCoins constant so that if it changes, this isn't just hardcoded
         {
-            message.text += "\n You collected all of the possible coins!";
+            message.text += "\n Achievement Unlocked: Collector - You collected all of the possible coins!";
         }
         if (!usedPowerUp)
         {
@@ -122,6 +122,7 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         GameStarted = false;
+        usedPowerUp = false;
         timeToWin = initialWinTime;
         score = 0;
         hasShield = false;
